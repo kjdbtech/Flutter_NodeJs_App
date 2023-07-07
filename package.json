@@ -1,0 +1,21 @@
+{
+  "name": "ex0705_psql",
+  "version": "1.0.0",
+  "description": "A new Flutter project.",
+  "main": "main.dart",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "pg": "^8.11.1",
+    "ws": "^8.13.0"
+  }
+}
