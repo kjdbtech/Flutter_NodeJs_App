@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web App</title>
+    <link rel="stylesheet" href="../css/main_style.css" type="text/css">
+</head>
+<body>
+    <form action="http://192.168.20.145:3000/auth_submit" method="post">
+        <div class="total_group" style="background-color:lightyellow">
+
+            <div class="name_group">
+                <b>이름</b>
+                <div>
+                    <input class="name_input" name="name"  type="text">
+                </div>
+            </div>
+            <div>
+                <b>직원번호</b>
+                <div>
+                    <input class="empno_input" name="empno" type="text">
+                </div>
+            </div>
+            <div>
+                <b>부서번호</b>
+                <div>
+                    <label></label><input class="" name='deptno' type="radio" value="10">10</label>
+                    <label></label><input class="" name='deptno' type="radio" value="20">20</label>
+                    <label></label><input class="" name='deptno' type="radio" value="30">30</label>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <b>입사날짜</b>
+                </div>
+                <span>
+                    <input class="hire_input" type="number" name="year" placeholder="년(4자)">
+                    <select name="month">
+                        <option value="0">월</option>
+                        <option value="1">1월</option>
+                        <option value="2">2월</option>
+                        <option value="3">3월</option>
+                        <option value="4">4월</option>
+                        <option value="5">5월</option>
+                        <option value="6">6월</option>
+                        <option value="7">7월</option>
+                        <option value="8">8월</option>
+                        <option value="9">9월</option>
+                        <option value="10">10월</option>
+                        <option value="11">11월</option>
+                        <option value="12">12월</option>
+                    </select>
+                    <input class="hire_input" type="number" name="day" placeholder="일">
+                </span>
+            </div>
+            <div class="auth_group">
+                <input class="auth_btn" type="submit" value="인증하기">
+            </div>
+        </div>
+    </form>
+
+    
+</body>
+</html>
