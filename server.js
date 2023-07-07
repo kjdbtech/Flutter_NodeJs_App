@@ -1,6 +1,7 @@
 var express = require ('express');      // express모듈을 'express' 이름으로 호출
 var app = express();    //express를 실행시키고 기능들을 'app' 별칭으로 사용 가능
 var {Pool, Query} = require('pg');
+var bodyParser = require('body-parser');
 
 const pool = new Pool({
     user: 'dbtech',
@@ -10,6 +11,8 @@ const pool = new Pool({
     port: 5432,
 
 })
+
+app.use(bodyParser.urlencoded({extended:true}));
 
 
 app.use(express.json());    // json 요청 허용
@@ -58,6 +61,53 @@ app.post('/check',(req,res) => {
 });
 
 
+
+// 외부 css 사용
+app.get('/css/main_style.css', (req, res) => {
+    res.setHeader('Content-Type', 'text/css');
+    res.sendFile(__dirname + '/css/main_style.css');
+})
+
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + "/html/main.html");
+})
+
+
+// 인증정보 확인하기
+app.post('/auth_submit',(req, res) => {
+    const name = req.body.name;
+    const empno = parseInt(req.body.empno);
+    const deptno = parseInt(req.body.deptno);
+    const hire_date = (req.body.year) + '-'
+                        + (req.body.month) + '-'
+                        + (req.body.day);
+    
+    const sql = `select * from emp where empno = ${empno} and ename ilike '${name}' and hiredate = ${hire_date} and deptno = ${deptno}`;
+    
+    
+    console.log('이름 : ' + name);
+    console.log('직원번호 : ' + empno);
+    console.log('부서번호 : ' + deptno);
+    console.log('입사날짜 : ' + hire_date);
+
+    res.send('인증정보 받음')
+
+    try {
+        pool.query(sql, (err, result) => {
+            if (result) {
+                console.log('인증성공');
+            } else {
+                console.log('인증실패');
+                console.log(err);
+            }
+        })
+    } catch (error) {
+        console.log('오류 : ');
+        console.log(error);
+    }
+
+});
 
 
 
