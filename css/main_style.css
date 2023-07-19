@@ -1,10 +1,15 @@
 /* * : 전체 */
 
 
- input.name_input, input.empno_input, input.hire_input{
+ input.name_input, input.empno_input{
     width: 90%;
     min-width: 150px;
     max-width: 200px;
+}
+
+input.hire_input {
+    width: 30%;
+    margin-right: 2mm;
 }
 
 div.auth_group {
@@ -21,4 +26,8 @@ input.auth_btn {
     background-color: antiquewhite;
     border-color: aliceblue;
     border-radius: 20%;
+}
+
+span.hire_date {
+    width : 80%
 }

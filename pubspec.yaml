@@ -32,6 +32,9 @@ dependencies:
   postgres: ^2.3.0
   http:
   webview_flutter: ^2.0.14
+  shared_preferences: ^2.0.6
+  flutter_web_auth:
+  dio: ^4.0.0
 
 
   # The following adds the Cupertino Icons font to your application.
